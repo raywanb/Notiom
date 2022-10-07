@@ -1,10 +1,8 @@
 import { Box, Text, Center } from "@chakra-ui/react";
-import Navbar from "../components/Navbar";
 
 const Header = () => {
     return (
-        <Box bg='cream' w='100vw' h='53vh'>
-        <Navbar/>
+        <Box bg='cream' w='100vw' h='42vh'>
         <Center>
           <Text variant="L1">Create. Explore.</Text>
         </Center>
