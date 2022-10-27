@@ -49,11 +49,24 @@ const theme = extendTheme({
             color:'offBlack',
             fontSize:'2vh',
             fontWeight:700,
+            noOfLines:5,
+            mt:'-10%'
           },
         },
         defaultProps: {
           as:'b'
         },
+      },
+      CloseButton: {
+        variants: {
+          'Delete': {
+            size:'sm',
+            color:'offWhite',
+            marginLeft:'7.75vw',
+            mt:'4.8vh',
+            position: 'absolute'
+          }
+        }
       },
       Button: {
         variants: {
@@ -85,7 +98,7 @@ const theme = extendTheme({
             borderColor: 'grey',
             whiteSpace: "normal",
             wordWrap: "break-word",
-          }
+          },
         },
         defaultProps: {
           colorScheme: 'teal',

@@ -21,12 +21,29 @@ function HomePage() {
     setDocuments(temp)
   }
 
+  const delDoc = (inde) => {
+    let temp = documents
+    let ret:any = []
+    console.log(temp)
+    for (var i = 0; i < temp.length; i++) {
+      if (i != inde) {
+        if (temp.length == 2) {
+          ret.push(temp[i]);
+        } else {
+          ret.push(temp[i][0]);
+        }
+      }
+    }
+    console.log(ret)
+    setDocuments(ret)
+  }
+
   return (
     (edit == 0) ?
       <>
         <Navbar toEdit={setEdit}/>
         <Header />
-        <Footer change={setButton} toEdit={setEdit} docs={documents} />
+        <Footer del={delDoc} change={setButton} toEdit={setEdit} docs={documents} />
       </>
     :
       <>

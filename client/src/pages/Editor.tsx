@@ -26,7 +26,6 @@ const Editor = (props) =>{
         <Box bg="cream" h="100vh">
             <Wrap justify='center'>
                 <form onSubmit={handleSubmit} className="editor">
-                    {/* <Button variant="Submit" className="submitbtn">Save</Button> */}
                     <textarea name="text" className="textbox" value={message} onChange={handleChange}></textarea>
                     <input type="submit" value="Save"/>
                 </form>

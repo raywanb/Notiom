@@ -1,9 +1,9 @@
-import { Button, Wrap, WrapItem, Text } from "@chakra-ui/react";
+import { Button, CloseButton, Wrap, WrapItem, Text, Image, Box } from "@chakra-ui/react";
 import React from "react";
 
 const Footer = (Props) => {
 
-    const handleClick = () => {
+    const handleEdit = () => {
         Props.toEdit(1);
     }
 
@@ -27,16 +27,26 @@ const Footer = (Props) => {
     return (
         <Wrap ml='4vw' justify='center'>
             <WrapItem>
-            <Button variant='Doc' onClick={handleClick}>
-                <img src='./add.svg'/>
+            <Button variant='Doc' onClick={handleEdit}>
+                <Image width='100%' height='100%' src='./add.svg'/>
             </Button>
             </WrapItem>
             {Props.docs.map((obj, i) => {
                 console.log(obj)
-                return <WrapItem><Button onClick={() => {
-                    Props.change(i);
-                    Props.toEdit(1);
-                }} variant='Reg'><Text variant='L4'>{getLastFive(obj)}</Text></Button></WrapItem>
+                return (<WrapItem>
+                    
+                        <Button onClick={() => {
+                        Props.change(i);
+                        Props.toEdit(1);
+                        }} variant='Reg'>
+                            <Text variant='L4'>{getLastFive(obj)}</Text>
+                        </Button>
+                        <CloseButton _hover={{ color: 'black' }} variant='Delete' onClick={() => {
+                            console.log(i)
+                            Props.del(i)
+                        }}/>
+                    
+                </WrapItem>)
             })}
         </Wrap>
     )
